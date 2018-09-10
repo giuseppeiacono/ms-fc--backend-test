@@ -51,6 +51,7 @@ public class TweetControllerTest {
 
     @Test
     public void shouldReturn400WhenInsertingAnInvalidTweet() throws Exception {
+        exception.expect(Exception.class);
         publishTweet("Schibsted Spain", "We are Schibsted Spain (look at our home page http://www.schibsted.es/), we own Vibbo, InfoJobs, fotocasa, coches.net and milanuncios. Welcome!")
                 .andExpect(status().is(400));
     }
